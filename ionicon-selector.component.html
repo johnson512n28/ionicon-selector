@@ -1,0 +1,37 @@
+<div *ngIf="inModal" class="modal-header">
+  <ion-grid class="ion-no-padding" lines="none">
+    <ion-row>
+      <ion-col>
+        <div class="modal-title">
+          {{modalTitle}}
+        </div>
+      </ion-col>
+      <ion-col size="2">
+        <ion-icon (click)="dismissModal()" name="close-circle-outline" class="modal-close"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+<ion-searchbar debounce="500" placeholder="Search Icons"
+               (ionChange)="searchChanged()"
+               [(ngModel)]="searchText"></ion-searchbar>
+<div class="sub-header">
+  <ion-input *ngIf="showTemplateUtility" class="selected-icon-label" [value]="selectedIconText()" [readonly]="true" (click)="selectedClicked()"></ion-input>
+  <div *ngIf="showTemplateUtility" class="copied-text" [class.copied]="copied">Copied!</div>
+  <div class="page-text" [class.ion-text-end]="showTemplateUtility">{{pageStart + 1}} - {{pageStart + iconsPerPage}} of {{iconList.length}}</div>
+</div>
+<div class="main-container">
+  <div class="icon-container">
+    <div *ngFor="let icon of filteredIcons" class="icon-main" (click)="selectIcon(icon)">
+      <ion-icon class="icon" [name]="icon.name" color="primary" [class.selected]="icon === selectedIcon"></ion-icon>
+      <div class="icon-name">{{icon.name}}</div>
+    </div>
+  </div>
+</div>
+<ion-footer>
+  <div class="button-div">
+    <ion-button class="prev-button" (click)="lastPage()" [disabled]="!canLast()">Prev.</ion-button>
+    <div class="button-separator"></div>    
+    <ion-button class="next-button" (click)="nextPage()" [disabled]="!canNext()">Next</ion-button>
+  </div>
+</ion-footer>

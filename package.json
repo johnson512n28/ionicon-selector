@@ -1,0 +1,23 @@
+{
+  "name": "ionicon-selector",
+  "version": "1.0.0",
+  "description": "Ionic Component to Select Ionicons",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fullpublish": "npm install && npm run publish",
+    "publish": "publish-to-git --remote https://github.com/johnson512n28/ionicon-selector.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnson512n28/ionicon-selector.git"
+  },
+  "author": "Daniel K. Johnson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnson512n28/ionicon-selector/issues"
+  },
+  "homepage": "https://github.com/johnson512n28/ionicon-selector#readme",
+  "devDependencies": {
+    "publish-to-git": "^1.1.9"
+  }
+}
