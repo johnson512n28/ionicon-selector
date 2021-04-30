@@ -1,0 +1,39 @@
+{
+  "name": "ionicon-selector",
+  "version": "1.0.1",
+  "description": "Ionic Component to Select Ionicons",
+  "main": "dist/esm/ionicon-selector.component.js",
+  "module": "dist/esm/ionicon-selector.module.js",
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "clean": "rimraf ./dist",
+    "watch": "tsc --watch",
+    "prepublishOnly": "npm run build",
+    "fullpublish": "npm install && npm run build && npm run publish",
+    "publish": "publish-to-git --remote https://github.com/johnson512n28/ionicon-selector.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnson512n28/ionicon-selector"
+  },
+  "author": "Daniel K. Johnson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnson512n28/ionicon-selector/issues"
+  },
+  "homepage": "https://github.com/johnson512n28/ionicon-selector#readme",
+  "devDependencies": {
+    "publish-to-git": "^1.1.9",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.45.2",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "@angular/common": "^11.2.11",
+    "@angular/core": "^11.2.11",
+    "@angular/forms": "^11.2.11",
+    "@angular/router": "^11.2.11",
+    "@ionic/angular": "^5.6.5",
+    "rxjs": "^6.6.7"
+  }
+}
